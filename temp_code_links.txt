@@ -1,0 +1,26 @@
+tn_budgets['production_budget'] = tn_budgets['production_budget'].str.replace('$', '')
+tn_budgets['production_budget'] = tn_budgets['production_budget'].str.replace(',', '')
+tn_budgets['production_budget'] = tn_budgets['production_budget'].astype(float)
+
+tn_budgets['worldwide_gross'] = tn_budgets['worldwide_gross'].str.replace('$', '')
+tn_budgets['worldwide_gross'] = tn_budgets['worldwide_gross'].str.replace(',', '')
+tn_budgets['worldwide_gross'] = tn_budgets['worldwide_gross'].astype(float)
+
+
+From amberyandow to Everyone:  12:42 PM
+https://github.com/dapsavoie/dsc-mod-1-project-v2-1-online-ds-ft-120919/blob/dataviz/student.ipynb
+From Jesse Neumann to Everyone:  01:52 PM
+https://github.com/Jesse989/movie-analysis
+https://github.com/Jesse989/movie-analysis/blob/master/data/interim/money.csv
+https://github.com/Jesse989/movie-analysis/blob/master/data/raw/movies.csv
+
+
+var lastScrollHeight = 0;
+function autoScroll() {
+  var sh = document.documentElement.scrollHeight;
+  if (sh != lastScrollHeight) {
+    lastScrollHeight = sh;
+    document.documentElement.scrollTop = sh;
+  }
+}
+var id = window.setInterval(autoScroll, 100);
