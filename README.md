@@ -60,4 +60,5 @@ All data analysis and visualizations are executed in this notebook. Here, severa
 * Comparison of gross earnings of different months of the year for movies released before and after 2014
 * Comparison of gross earnings of different binary-genres for movies released in summer and winter
 
-
+3. presentation.pdf
+  contains the non-technical presentation of 10 slides and about 9mins. The presentation shows overall findings avoiding uncecessary details about the process or minor conclusions. 
