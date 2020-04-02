@@ -25,24 +25,29 @@ Following table contain all the data files in the zipped folder.
 |  tn.movie_budgets.csv      |                        |                      |                     |
 
 
-I carefully inspected the features to understand the data. Initial analysis suggests there are many data missing. It was apparent a thorough cleanup was necessary. The steps taken for data cleaning and scrubbing are included in the text of the Jupyter notebooks. Number of viable datapoints after cleaning was too low. After discussions with Jesse Numan one way to get missing data is to web scrape for IMDBpro.org, which is a universal repository for movie industry. He was able to device a script to obtain relatively complete dataset of over 14,428 records. Therefore, I chose to develop my data analysis around this much more complete dataset. The data source and alterations are mentioned in the Jupyter notebook. Staring from the scrapped dataset other information such as runtime, rating , actors and writers were grabbed from the provided datafiles. Following are the list of scrapped datafiles 
+I carefully inspected the features to understand the data. Initial analysis suggests there are many data missing. It was apparent a thorough cleanup was necessary. The steps taken for data cleaning and scrubbing are included in the text of the Jupyter notebooks. Number of viable datapoints after cleaning was too low. After discussions with Jesse Numan one way to get missing data is to web scrape for IMDBpro.org, which is a universal repository for movie industry. He was able to device a script to obtain relatively complete dataset of over 14,428 records. I've adoped his main code and did some alterations to cater to my needs. The data was seved in "region.csv". I developed my data analysis around this much more complete dataset. The data source and alterations are mentioned in the Jupyter notebook. Staring from the scrapped dataset other information such as runtime, rating , actors and writers were grabbed from the provided datafiles.
 
-* region.csv 
-* revenue.csv
-* genres.csv 
-* date.csv
-
-All datafiles are located at ./Data folder in the main repo
+* <b>All datafiles are located at ./Data folder in the main repo</b>
 
 ## notebook organization
 
-1.	Data_Cleaning_Exploration.ipynb
+1. data gathering.ipynb
+This stage came about due to necessity after spending lot of time data cleaning and exploring. Thus, the files are not in chronological order but rather to what makes most sense for the project. Here, with the help of Jesse and other I’ve ventured to gather data from other sources. 
+
+I. IMDB web API: The easiest was to use the IMDB web API to retrieve missing information via a python script. However, this method was short lived due to a rookie mistake. I forgot to add a delay to the code which resulted in getting flagged by the host. 
+
+II. IMDBpro website: This was Jesse’s idea. The strategy was to search for a almost list of movies and scrape the relevant information. The code is in the following notebook. 
+
+III. TMDB web API: This is difficult than the 1st as little examples exist as to how to use it. However, I was able to find some open source python frameworks (ex. tmdbsimple) that does work. Unfortunately, time constraints limited the execution of this method but the initial code samples are attached in the notebook. 
+
+
+2.	Data_Cleaning_Exploration.ipynb
 All the data loading, cleaning and exploration is done in this Jupyter notebook. All the necessary features that will be required for visualization and analysis is saved to movie_main.csv. The notebook is ordered such chat each files is loaded, explored and cleaned in units of code. The comments are given on each cell where it is appropriate to do so. Joining of different data frames into one single data frame is done at the end of the notebook. All sections contain subtitles that clearly explains the purpose. 
 In most places where data is missing (‘NaN’) a dummy values ( -1.0 or ‘unknown’ ) is created in hopes to get the data by other means later or not to lose too many useful data. Some features such as “death year” of a director or actor is dropped entirely. 
 
 “Binary genres” : The genre for a movie is given as one, two, three or even more primitive genres such as action, family, Sci-Fi… etc. Such situation makes the analysis quite tedious and unclear. As a crude alternative only the 1st two primitive genres are kept for those with more than two and single valued ones are kept untouched. I’ve coined the term “binary genre” for this feature to signify it contains two primitive genres. 
 
-2.	Visualization.ipynb
+3.	Visualization.ipynb
 All data analysis and visualizations are executed in this notebook. Here, several of the key analysis and visualizations were done. 
 
 * Define and create reduced genres formats for ease of analysis
