@@ -3,6 +3,8 @@
 
 ![](images/bill.jpg) 
 <!-- >  something is hiding here <--> 
+## The Project
+Microsoft sees all the big companies creating original video content, and they want to get in on the fun. They have decided to create a new movie studio, but the problem is they don’t know anything about creating movies. They have hired you to help them better understand the movie industry. Your team is charged with doing data analysis and creating a presentation that explores what type of films are currently doing the best at the box office. You must then translate those findings into actionable insights that the CEO can use when deciding what type of films they should be creating.
 
 ## Data exploration
    
@@ -51,11 +53,18 @@ In most places where data is missing (‘NaN’) a dummy values ( -1.0 or ‘unk
 All data analysis and visualizations are executed in this notebook. Here, several of the key analysis and visualizations were done. 
 
 * Define and create reduced genres formats for ease of analysis
+
 * Comparison of gross earnings of different binary-genres
+![](images/gross_genres2.jpeg) 
+![](images/fig_G_gross_pie.jpeg)
 * Comparison of net profit of different binary-genres
-* Comparison of net profit of different primitive-genres
+![](images/profit_genres2.jpeg) 
+![](images/profit_genres2_pie.jpeg)
+#* Comparison of net profit of different primitive-genres
 * Analysis of IMDB rating distribution
+![](images/rating_whisker.jpeg)
 * Comparison of IMDB ratings of different binary-genres
+![](images/rating_genres.jpeg)
 * Relationship of ratings to gross earnings 
 * Relationship of ratings to movie budget 
 * Analysis of movie runtime distribution
